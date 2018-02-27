@@ -1,0 +1,30 @@
+.login {
+	background-color: rgba(8, 27, 44, 1);
+}
+
+div #loginContents {
+	position: absolute;
+	top: 22%;
+	left: 0;
+	right: 0;
+	margin: auto;
+	display: inline;
+	border: 3px solid #ffb501;
+	width: 293px;
+	color: #ffb501;
+	padding: 11px;
+}
+
+input {
+	margin: 15px;
+	padding: 5px;
+}
+
+button {
+	color: rgba(8, 27, 44, 1);
+	background-color: #ffb501;
+	margin: 7px;
+	padding: 5px;
+	display: inline-block;
+	width: 40%;
+}

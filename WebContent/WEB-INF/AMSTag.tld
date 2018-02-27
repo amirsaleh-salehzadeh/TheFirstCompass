@@ -1,0 +1,1164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"
+                        "http://java.sun.com/dtd/web-jsptaglibrary_1_2.dtd">
+<taglib>
+ <tlib-version>1.0</tlib-version>
+ <jsp-version>1.2</jsp-version>
+ <short-name>AMSTag</short-name>
+ <uri>AMSTag</uri>
+ <display-name>AMSTag</display-name>
+<tag>
+	<name>dropDown</name>
+	<tag-class>tools.AMSDropDown</tag-class>
+	<body-content>JSP</body-content>
+	<attribute>
+		<name>selectedVal</name>
+		<rtexprvalue>true</rtexprvalue>
+		<type>java.lang.String</type>
+		<description>selected value or ID</description>
+	</attribute>
+	<attribute>
+		<name>name</name>
+		<rtexprvalue>true</rtexprvalue>
+		<type>java.lang.String</type>
+		<description>Name of the select option</description>
+	</attribute>
+	<attribute>
+		<name>title</name>
+		<rtexprvalue>true</rtexprvalue>
+		<type>java.lang.String</type>
+		<description>a title option with empty value</description>
+	</attribute>
+	<attribute>
+		<name>onChange</name>
+		<rtexprvalue>true</rtexprvalue>
+		<type>java.lang.String</type>
+		<description>onChange JavaScript function</description>
+	</attribute>
+	<attribute>
+		<name>id</name>
+		<rtexprvalue>true</rtexprvalue>
+		<type>java.lang.String</type>
+		<description>select option id</description>
+	</attribute>
+	<attribute>
+		<name>dropDownItems</name>
+		<rtexprvalue>true</rtexprvalue>
+		<type>java.util.List</type>
+		<description>Items in the dropDown</description>
+	</attribute>
+</tag>
+<tag>
+	<name>ajaxPaginate</name>
+	<tag-class>tools.AMSAJAXPagination</tag-class>
+	<body-content>JSP</body-content>
+	<attribute>
+		<name>align</name>
+		<rtexprvalue>true</rtexprvalue>
+		<type>java.lang.String</type>
+		<description>alignment</description>
+	</attribute>
+	<attribute>
+		<name>totalRows</name>
+		<rtexprvalue>true</rtexprvalue>
+		<type>java.lang.Integer</type>
+		<description>Total rows that should be paginated</description>
+	</attribute>
+	<attribute>
+		<name>currentPage</name>
+		<rtexprvalue>true</rtexprvalue>
+		<type>java.lang.Integer</type>
+		<description>The current page</description>
+	</attribute>
+	<attribute>
+		<name>pageSize</name>
+		<rtexprvalue>true</rtexprvalue>
+		<type>java.lang.Integer</type>
+		<description>The number of results that must be shown in the current page</description>
+	</attribute>
+	<attribute>
+		<name>columns</name>
+		<rtexprvalue>true</rtexprvalue>
+		<type>java.lang.String</type>
+		<description>Comma separate columns</description>
+	</attribute>
+	<attribute>
+		<name>popupID</name>
+		<rtexprvalue>true</rtexprvalue>
+		<type>java.lang.String</type>
+		<description>ID of the popup menu</description>
+	</attribute>
+	<attribute>
+		<name>popupMenuSettingItems</name>
+		<rtexprvalue>true</rtexprvalue>
+		<type>java.util.List</type>
+		<description>Items in the pop-up menu</description>
+	</attribute>
+	<attribute>
+		<name>popupGridSettingItems</name>
+		<rtexprvalue>true</rtexprvalue>
+		<type>java.util.List</type>
+		<description>Items in the pop-up menu</description>
+	</attribute>
+</tag>
+<tag>
+	<name>message</name>
+	<tag-class>tools.AMSMessage</tag-class>
+	<body-content>JSP</body-content>
+	<attribute>
+		<name>messageEntity</name>
+		<rtexprvalue>true</rtexprvalue>
+		<type>common.MessageENT</type>
+		<description></description>
+	</attribute>
+</tag>
+
+
+ <tag>
+  <name>input</name>
+  <tag-class>aip.tag.input.AIPInput</tag-class>
+  <body-content>JSP</body-content>
+
+  <attribute>
+   <name>field</name>
+   <required>true</required>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <description>object of type aip.law.struts.form.common.AipbaseViewField that define required input paramateres</description>
+  </attribute>
+
+  <attribute>
+   <name>scope</name>
+   <required>false</required>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <description>default:page others:request|session|application   
+				 desc:scope of field in memory </description>
+  </attribute>
+
+  <attribute>
+   <name>colspan</name>
+   <required>false</required>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <description>default : 1</description>
+  </attribute>
+
+ </tag>
+
+ <tag>
+  <name>inputs</name>
+  <tag-class>aip.tag.input.AIPInputs</tag-class>
+  <body-content>JSP</body-content>
+
+  <attribute>
+   <name>name</name>
+   <required>true</required>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <description>object of type aip.law.struts.form.common.AipbaseEditForm that define required inputs</description>
+  </attribute>
+
+  <attribute>
+   <name>fields</name>
+   <required>true</required>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <description>List&lt;AipbaseViewField&gt; of type aip.law.struts.form.common.AipbaseViewField that define required inputs</description>
+  </attribute>
+
+  <attribute>
+   <name>columnsPerRow</name>
+   <required>false</required>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <description>default : 1</description>
+  </attribute>
+
+ </tag>
+
+ <tag>
+  <name>confirm</name>
+  <tag-class>aip.tag.confirm.AIPConfirm</tag-class>
+  <body-content>JSP</body-content>
+
+  <attribute>
+   <name>lawId</name>
+   <required>true</required>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <description></description>
+  </attribute>
+  
+  <attribute>
+   <name>isLaw</name>
+   <required>true</required>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <description></description>
+  </attribute>
+  
+  <attribute>
+   <name>confirmType</name>
+   <required>true</required>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <description></description>
+  </attribute>
+  
+  <attribute>
+   <name>isConfirmed</name>
+   <required>false</required>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <description></description>
+  </attribute>
+  
+  <attribute>
+   <name>lawConfirmedENT</name>
+   <required>false</required>
+   <rtexprvalue>true</rtexprvalue>
+   <type>aip.law.common.common.LawConfirmedENT</type>
+   <description></description>
+  </attribute>
+  
+  <attribute>
+   <name>formId</name>
+   <required>true</required>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <description></description>
+  </attribute>
+  
+  
+  
+</tag>
+
+ <tag>
+  <name>note</name>
+  <tag-class>aip.tag.note.AIPNote</tag-class>
+  <body-content>JSP</body-content>
+
+  <attribute>
+   <name>refNo</name>
+   <required>true</required>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <description></description>
+  </attribute>
+  
+  <attribute>
+   <name>fieldName</name>
+   <required>true</required>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <description></description>
+  </attribute>
+  
+  <attribute>
+   <name>refId</name>
+   <required>true</required>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <description></description>
+  </attribute>
+  
+  <attribute>
+   <name>noteDialogId</name>
+   <required>true</required>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <description></description>
+  </attribute>
+  
+  <attribute>
+   <name>styleId</name>
+   <required>false</required>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <description></description>
+  </attribute>
+  
+  <attribute>
+   <name>extraParams</name>
+   <required>false</required>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <description></description>
+  </attribute>
+  
+</tag>
+
+ <tag>
+  <name>dialog</name>
+  <tag-class>mic.crm.tools.AMSDialog</tag-class>
+  <body-content>JSP</body-content>
+
+  <attribute>
+   <name>title</name>
+   <required>true</required>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <description></description>
+  </attribute>
+
+  <attribute>
+   <name>styleId</name>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <description>example : dialog1</description>
+  </attribute>
+
+  <attribute>
+   <name>style</name>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <description>simple|... default is:simple</description>
+  </attribute>
+
+<!--  <attribute>-->
+<!--   <name>img</name>-->
+<!--   <rtexprvalue>true</rtexprvalue>-->
+<!--   <type>java.lang.String</type>-->
+<!--   <description>default is : /aipconfig/dialog/window_dialog.gif</description>-->
+<!--  </attribute>-->
+
+  <attribute>
+   <name>height</name>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <description></description>
+  </attribute>
+
+  <attribute>
+   <name>screenPosition</name>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <description>could set to  'center'</description>
+  </attribute>
+
+  <attribute>
+   <name>loader</name>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <description>for example a jsp file</description>
+  </attribute>
+
+  <attribute>
+   <name>isIncludeJQuery</name>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <description>true|false
+   		default is:true means page already have jquery.js and jquery.ui.all.packed.js 
+   		otherwise these files add to content.
+   		required js files is:
+		&lt;script type="text/javascript" src="jquery/jquery.js" /&gt;
+		&lt;script type="text/javascript" src="jquery/ui/ui.core.packed.js"/&gt;
+		&lt;script type="text/javascript" src="jquery/ui/ui.draggable.packed.js"/&gt;
+   </description>
+  </attribute>
+
+  <attribute>
+   <name>toolbar</name>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <description>default is : 
+   	input type='button' name='ok' value='تایید'  onclick='closeDialog(\"dialog1\");'
+   	input type='button' name='cancel' value='انصراف' onclick='closeDialog(\"dialog1\");'
+  	</description>
+  </attribute>
+
+  <attribute>
+   <name>toolbarExtra</name>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <description>this insteadof replace toolbar append items to toolbar 
+  	</description>
+  </attribute>
+
+  <attribute>
+   <name>onOKClick</name>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <description>append event handler to ok button</description>
+  </attribute>
+
+
+ </tag>
+
+ <tag>
+	  <name>tree</name>
+	  <tag-class>aip.tag.tree.AIPTree</tag-class>
+	  <body-content>JSP</body-content>
+	  <attribute>
+		   <name>loader</name>
+		   <required>true</required>
+		   <rtexprvalue>true</rtexprvalue>
+		   <type>java.lang.String</type>
+		   <description>sample tag/tree/sampletreeloader</description>
+	  </attribute>
+	  <attribute>
+		   <name>id</name>
+		   <required>true</required>
+		   <rtexprvalue>true</rtexprvalue>
+		   <type>java.lang.String</type>
+		   <description>example:tree1</description>
+	  </attribute>
+	  <attribute>
+		   <name>title</name>
+		   <required>true</required>
+		   <rtexprvalue>true</rtexprvalue>
+		   <type>java.lang.String</type>
+		   <description>example : law 1</description>
+	  </attribute>
+	  <attribute>
+		   <name>isJQueryIncluded</name>
+		   <rtexprvalue>true</rtexprvalue>
+		   <type>java.lang.String</type>
+		   <description>default:true  means don't include jquery otherwise tag import jquery and tree .js </description>
+	  </attribute>
+	  
+
+	  <attribute>
+		   <name>align</name>
+		   <rtexprvalue>true</rtexprvalue>
+		   <type>java.lang.String</type>
+		   <description></description>
+	  </attribute>
+
+	  <attribute>
+		   <name>style</name>
+		   <rtexprvalue>true</rtexprvalue>
+		   <type>java.lang.String</type>
+		   <description>default : SIMPLE</description>
+	  </attribute>
+	  
+	  <attribute>
+		   <name>selectedIds</name>
+		   <required>false</required>
+		   <rtexprvalue>true</rtexprvalue>
+		   <type>java.lang.String</type>
+		   <description>example : law 1</description>
+	  </attribute>
+
+	  <attribute>
+		   <name>selectedNames</name>
+		   <required>false</required>
+		   <rtexprvalue>true</rtexprvalue>
+		   <type>java.lang.String</type>
+		   <description>example : law 1</description>
+	  </attribute>
+ </tag>
+ 
+ 
+ 
+ 
+ <tag>
+	  <name>pagging</name>
+	  <tag-class>aip.tag.pagging.AIPPagging</tag-class>
+	  <body-content>JSP</body-content>
+	  <attribute>
+		   <name>title</name>
+		   <rtexprvalue>true</rtexprvalue>
+		   <type>java.lang.String</type>
+	  </attribute>
+	  <attribute>
+		   <name>totalCount</name>
+		   <rtexprvalue>true</rtexprvalue>
+		   <type>java.lang.Integer</type>
+	  </attribute>
+	  <attribute>
+		   <name>pageSize</name>
+		   <rtexprvalue>true</rtexprvalue>
+		   <type>java.lang.Integer</type>
+	  </attribute>
+	  <attribute>
+		   <name>currentPage</name>
+		   <rtexprvalue>true</rtexprvalue>
+		   <type>java.lang.Integer</type>
+	  </attribute>
+	  <attribute>
+		   <name>type</name>
+		   <rtexprvalue>true</rtexprvalue>
+		   <type>java.lang.String</type>
+		   <description>server|client</description>
+	  </attribute>
+	  <attribute>
+		   <name>style</name>
+		   <rtexprvalue>true</rtexprvalue>
+		   <type>java.lang.String</type>
+		   <description>bullet</description>
+	  </attribute>
+	  <attribute>
+		   <name>paggingCount</name>
+		   <rtexprvalue>true</rtexprvalue>
+		   <type>java.lang.String</type>
+		   <description>bullet</description>
+	  </attribute>
+	  <attribute>
+		   <name>counterReplace</name>
+		   <rtexprvalue>true</rtexprvalue>
+		   <type>java.lang.String</type>
+		   <description>default:@ else append to end</description>
+	  </attribute>
+	  <attribute>
+		   <name>href</name>
+		   <required>false</required>
+		   <rtexprvalue>true</rtexprvalue>
+		   <type>java.lang.String</type>
+		   <description>this prop or formId[,inputName] should be set for interacting with server</description>
+	  </attribute>
+	  <attribute>
+		   <name>hasFirstAndLast</name>
+		   <rtexprvalue>true</rtexprvalue>
+		   <type>java.lang.String</type>
+	  </attribute>
+	  <attribute>
+		   <name>cssFile</name>
+		   <rtexprvalue>true</rtexprvalue>
+		   <type>java.lang.String</type>
+		   <description>default is : aippagging.css</description>
+	  </attribute>
+	  <attribute>
+		   <name>paggingLST</name>
+		   <rtexprvalue>true</rtexprvalue>
+		   <type>java.lang.String</type>
+		   <description>instead of set TotalCount,PageSize,CurrentPage you could implement AIPPaggingLSTInterface in your LST class and then set it to here</description>
+	  </attribute>
+	  <attribute>
+		   <name>formId</name>
+		   <rtexprvalue>true</rtexprvalue>
+		   <type>java.lang.String</type>
+		   <description>this prop or href[,counterReplace] should be set for interacting with server</description>
+	  </attribute>
+	  <attribute>
+		   <name>inputName</name>
+		   <rtexprvalue>true</rtexprvalue>
+		   <type>java.lang.String</type>
+		   <description>this create an input tag in place and set its default name to requestPage or your entered inputName</description>
+	  </attribute>
+	  <attribute>
+		   <name>onclick</name>
+		   <rtexprvalue>true</rtexprvalue>
+		   <type>java.lang.String</type>
+		   <description>extra script onclick {for LawView.jsp onclick="this.form.elements['whichButtonClick'].value='go/state/phase';}</description>
+	  </attribute>
+	  <attribute>
+		   <name>ajaxEnabledAndLocationIs</name>
+		   <rtexprvalue>true</rtexprvalue>
+		   <type>java.lang.String</type>
+		   <description>if you set this ajax  will automatically enabled and this is the location that ajax load result of paggingClick in there
+		    </description>
+	  </attribute>
+	  <attribute>
+		   <name>extraAttributes</name>
+		   <rtexprvalue>true</rtexprvalue>
+		   <type>java.lang.String</type>
+		   <description>it is for settin rel and onclick  in a tag
+		    </description>
+	  </attribute>
+	  <attribute>
+		   <name>align</name>
+		   <rtexprvalue>true</rtexprvalue>
+		   <type>java.lang.String</type>
+		   <description>align in container
+		    </description>
+	  </attribute>
+	  <attribute>
+		   <name>paggingClickEnabled</name>
+		   <rtexprvalue>true</rtexprvalue>
+		   <type>java.lang.String</type>
+		   <description>default:true if set to false when formId attribute set paggingClick don't call 
+		    </description>
+	  </attribute>
+	  
+	  
+	  
+ </tag>
+ <tag>
+ 
+  <name>search</name>
+  <tag-class>aip.tag.search.SearchTag</tag-class>
+  <body-content>JSP</body-content>
+  <!-- Forte4J_TLDX:  This comment contains code generation information. Do not delete.
+        <tldx>
+            <packagename>searchtag</packagename>
+            <extendsSupportClass>TRUE</extendsSupportClass>
+            <supportClass>BodyTagSupport</supportClass>
+            <implementsTryCatchFinally>FALSE</implementsTryCatchFinally>
+            <findparent>FALSE</findparent>
+            <parenttype>SearchTag</parenttype>
+            <parentvariable>searchTag_parent</parentvariable>
+        </tldx>
+        -->
+  <attribute>
+   <name>table</name>
+   <required>true</required>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <!-- Forte4J_TLDX:  This comment contains code generation information. Do not delete.
+            <tldx>
+                
+                
+                
+                
+                <IsReferenceID>FALSE</IsReferenceID>
+                <ReferencesTag>FALSE</ReferencesTag>
+                <ReferenceScope>Session</ReferenceScope>
+                
+                
+                
+                
+                
+                
+                
+                
+                <ReferencesTagReferentFirst>TRUE</ReferencesTagReferentFirst>
+            </tldx>
+            -->
+  </attribute>
+  <attribute>
+   <name>action</name>
+   <required>true</required>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <!-- Forte4J_TLDX:  This comment contains code generation information. Do not delete.
+            <tldx>
+                <IsReferenceID>FALSE</IsReferenceID>
+                <ReferencesTag>FALSE</ReferencesTag>
+                <ReferenceScope>Session</ReferenceScope>
+                
+                
+                <ReferencesTagReferentFirst>TRUE</ReferencesTagReferentFirst>
+            </tldx>
+            -->
+  </attribute>
+  <attribute>
+   <name>pk</name>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <!-- Forte4J_TLDX:  This comment contains code generation information. Do not delete.
+            <tldx>
+                <defaultValue>ID</defaultValue>
+                <IsReferenceID>FALSE</IsReferenceID>
+                <ReferencesTag>FALSE</ReferencesTag>
+                <ReferenceScope>Session</ReferenceScope>
+                
+                
+                <ReferencesTagReferentFirst>TRUE</ReferencesTagReferentFirst>
+            </tldx>
+            -->
+  </attribute>
+ </tag>
+ <tag>
+  <name>item</name>
+  <tag-class>aip.tag.search.ItemTag</tag-class>
+  <body-content>JSP</body-content>
+  <!-- Forte4J_TLDX:  This comment contains code generation information. Do not delete.
+        <tldx>
+            <packagename>searchtag</packagename>
+            <extendsSupportClass>TRUE</extendsSupportClass>
+            <supportClass>BodyTagSupport</supportClass>
+            <implementsTryCatchFinally>FALSE</implementsTryCatchFinally>
+            <findparent>FALSE</findparent>
+        </tldx>
+        -->
+  <attribute>
+   <name>name</name>
+   <required>true</required>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <!-- Forte4J_TLDX:  This comment contains code generation information. Do not delete.
+            <tldx>
+                
+                
+                
+                
+                
+                
+                <IsReferenceID>FALSE</IsReferenceID>
+                <ReferencesTag>FALSE</ReferencesTag>
+                <ReferenceScope>Session</ReferenceScope>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <ReferencesTagReferentFirst>TRUE</ReferencesTagReferentFirst>
+            </tldx>
+            -->
+  </attribute>
+  <attribute>
+   <name>label</name>
+   <required>true</required>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <!-- Forte4J_TLDX:  This comment contains code generation information. Do not delete.
+            <tldx>
+                
+                
+                
+                
+                
+                
+                <IsReferenceID>FALSE</IsReferenceID>
+                <ReferencesTag>FALSE</ReferencesTag>
+                <ReferenceScope>Session</ReferenceScope>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <ReferencesTagReferentFirst>TRUE</ReferencesTagReferentFirst>
+            </tldx>
+            -->
+  </attribute>
+  <attribute>
+   <name>type</name>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <!-- Forte4J_TLDX:  This comment contains code generation information. Do not delete.
+            <tldx>
+                
+                
+                
+                
+                
+                <IsReferenceID>FALSE</IsReferenceID>
+                <ReferencesTag>FALSE</ReferencesTag>
+                <ReferenceScope>Session</ReferenceScope>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <ReferencesTagReferentFirst>TRUE</ReferencesTagReferentFirst>
+            </tldx>
+            -->
+  </attribute>
+  <attribute>
+   <name>value1</name>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <!-- Forte4J_TLDX:  This comment contains code generation information. Do not delete.
+            <tldx>
+                
+                
+                
+                
+                <IsReferenceID>FALSE</IsReferenceID>
+                <ReferencesTag>FALSE</ReferencesTag>
+                <ReferenceScope>Session</ReferenceScope>
+                
+                
+                
+                
+                
+                
+                
+                
+                <ReferencesTagReferentFirst>TRUE</ReferencesTagReferentFirst>
+            </tldx>
+            -->
+  </attribute>
+  <attribute>
+   <name>value2</name>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <!-- Forte4J_TLDX:  This comment contains code generation information. Do not delete.
+            <tldx>
+                
+                
+                
+                <IsReferenceID>FALSE</IsReferenceID>
+                <ReferencesTag>FALSE</ReferencesTag>
+                <ReferenceScope>Session</ReferenceScope>
+                
+                
+                
+                
+                
+                
+                <ReferencesTagReferentFirst>TRUE</ReferencesTagReferentFirst>
+            </tldx>
+            -->
+  </attribute>
+  <attribute>
+   <name>equalLike</name>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <!-- Forte4J_TLDX:  This comment contains code generation information. Do not delete.
+            <tldx>
+                
+                
+                <IsReferenceID>FALSE</IsReferenceID>
+                <ReferencesTag>FALSE</ReferencesTag>
+                <ReferenceScope>Session</ReferenceScope>
+                
+                
+                
+                
+                <ReferencesTagReferentFirst>TRUE</ReferencesTagReferentFirst>
+            </tldx>
+            -->
+  </attribute>
+  <attribute>
+   <name>betweenOR</name>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <!-- Forte4J_TLDX:  This comment contains code generation information. Do not delete.
+            <tldx>
+                
+                <IsReferenceID>FALSE</IsReferenceID>
+                <ReferencesTag>FALSE</ReferencesTag>
+                <ReferenceScope>Session</ReferenceScope>
+                
+                
+                <ReferencesTagReferentFirst>TRUE</ReferencesTagReferentFirst>
+            </tldx>
+            -->
+  </attribute>
+  <attribute>
+   <name>view</name>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <!-- Forte4J_TLDX:  This comment contains code generation information. Do not delete.
+            <tldx>
+                
+                
+                
+                <defaultValue>search+list</defaultValue>
+                <IsReferenceID>FALSE</IsReferenceID>
+                <ReferencesTag>FALSE</ReferencesTag>
+                <ReferenceScope>Session</ReferenceScope>
+                
+                
+                
+                
+                
+                
+                <ReferencesTagReferentFirst>TRUE</ReferencesTagReferentFirst>
+            </tldx>
+            -->
+  </attribute>
+  <attribute>
+   <name>foreignkey</name>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <!-- Forte4J_TLDX:  This comment contains code generation information. Do not delete.
+            <tldx>
+                
+                
+                
+                <IsReferenceID>FALSE</IsReferenceID>
+                <ReferencesTag>FALSE</ReferencesTag>
+                <ReferenceScope>Session</ReferenceScope>
+                
+                
+                
+                
+                
+                
+                <ReferencesTagReferentFirst>TRUE</ReferencesTagReferentFirst>
+            </tldx>
+            -->
+  </attribute>
+  <attribute>
+   <name>relatedTable</name>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <!-- Forte4J_TLDX:  This comment contains code generation information. Do not delete.
+            <tldx>
+                
+                
+                <IsReferenceID>FALSE</IsReferenceID>
+                <ReferencesTag>FALSE</ReferencesTag>
+                <ReferenceScope>Session</ReferenceScope>
+                
+                
+                
+                
+                <ReferencesTagReferentFirst>TRUE</ReferencesTagReferentFirst>
+            </tldx>
+            -->
+  </attribute>
+  <attribute>
+   <name>relatedPK</name>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <!-- Forte4J_TLDX:  This comment contains code generation information. Do not delete.
+            <tldx>
+                
+                
+                <defaultValue>ID</defaultValue>
+                <IsReferenceID>FALSE</IsReferenceID>
+                <ReferencesTag>FALSE</ReferencesTag>
+                <ReferenceScope>Session</ReferenceScope>
+                
+                
+                
+                
+                <ReferencesTagReferentFirst>TRUE</ReferencesTagReferentFirst>
+            </tldx>
+            -->
+  </attribute>
+ </tag>
+ <tag>
+  <name>list</name>
+  <tag-class>aip.tag.search.ListTag</tag-class>
+  <body-content>JSP</body-content>
+  <!-- Forte4J_TLDX:  This comment contains code generation information. Do not delete.
+        <tldx>
+            <packagename>searchtag</packagename>
+            <extendsSupportClass>TRUE</extendsSupportClass>
+            <supportClass>BodyTagSupport</supportClass>
+            <implementsTryCatchFinally>FALSE</implementsTryCatchFinally>
+            <findparent>FALSE</findparent>
+        </tldx>
+        -->
+  <attribute>
+   <name>query</name>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <!-- Forte4J_TLDX:  This comment contains code generation information. Do not delete.
+            <tldx>
+                <javaVariable></javaVariable>
+                
+                <IsReferenceID>FALSE</IsReferenceID>
+                <ReferencesTag>FALSE</ReferencesTag>
+                <ReferenceScope>Session</ReferenceScope>
+                <ReferencesTagType></ReferencesTagType>
+                <ReferencesTagVariable></ReferencesTagVariable>
+                
+                
+                <ReferencesTagReferentFirst>TRUE</ReferencesTagReferentFirst>
+            </tldx>
+            -->
+  </attribute>
+ </tag>
+ <tag>
+  <name>searchitem</name>
+  <tag-class>aip.tag.search.SearchItem</tag-class>
+  <body-content>JSP</body-content>
+  <!-- Forte4J_TLDX:  This comment contains code generation information. Do not delete.
+        <tldx>
+            <packagename>searchtag</packagename>
+            <extendsSupportClass>TRUE</extendsSupportClass>
+            <supportClass>BodyTagSupport</supportClass>
+            <implementsTryCatchFinally>FALSE</implementsTryCatchFinally>
+            <findparent>FALSE</findparent>
+        </tldx>
+        -->
+  <attribute>
+   <name>name</name>
+   <required>true</required>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <!-- Forte4J_TLDX:  This comment contains code generation information. Do not delete.
+            <tldx>
+                <IsReferenceID>FALSE</IsReferenceID>
+                <ReferencesTag>FALSE</ReferencesTag>
+                <ReferenceScope>Session</ReferenceScope>
+                <ReferencesTagReferentFirst>TRUE</ReferencesTagReferentFirst>
+            </tldx>
+            -->
+  </attribute>
+  <attribute>
+   <name>label</name>
+   <required>true</required>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <!-- Forte4J_TLDX:  This comment contains code generation information. Do not delete.
+            <tldx>
+                <IsReferenceID>FALSE</IsReferenceID>
+                <ReferencesTag>FALSE</ReferencesTag>
+                <ReferenceScope>Session</ReferenceScope>
+                <ReferencesTagReferentFirst>TRUE</ReferencesTagReferentFirst>
+            </tldx>
+            -->
+  </attribute>
+  <attribute>
+   <name>type</name>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <!-- Forte4J_TLDX:  This comment contains code generation information. Do not delete.
+            <tldx>
+                <IsReferenceID>FALSE</IsReferenceID>
+                <ReferencesTag>FALSE</ReferencesTag>
+                <ReferenceScope>Session</ReferenceScope>
+                <ReferencesTagReferentFirst>TRUE</ReferencesTagReferentFirst>
+            </tldx>
+            -->
+  </attribute>
+  <attribute>
+   <name>value1</name>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <!-- Forte4J_TLDX:  This comment contains code generation information. Do not delete.
+            <tldx>
+                <IsReferenceID>FALSE</IsReferenceID>
+                <ReferencesTag>FALSE</ReferencesTag>
+                <ReferenceScope>Session</ReferenceScope>
+                <ReferencesTagReferentFirst>TRUE</ReferencesTagReferentFirst>
+            </tldx>
+            -->
+  </attribute>
+  <attribute>
+   <name>value2</name>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <!-- Forte4J_TLDX:  This comment contains code generation information. Do not delete.
+            <tldx>
+                <IsReferenceID>FALSE</IsReferenceID>
+                <ReferencesTag>FALSE</ReferencesTag>
+                <ReferenceScope>Session</ReferenceScope>
+                <ReferencesTagReferentFirst>TRUE</ReferencesTagReferentFirst>
+            </tldx>
+            -->
+  </attribute>
+  <attribute>
+   <name>equalLike</name>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <!-- Forte4J_TLDX:  This comment contains code generation information. Do not delete.
+            <tldx>
+                <IsReferenceID>FALSE</IsReferenceID>
+                <ReferencesTag>FALSE</ReferencesTag>
+                <ReferenceScope>Session</ReferenceScope>
+                <ReferencesTagReferentFirst>TRUE</ReferencesTagReferentFirst>
+            </tldx>
+            -->
+  </attribute>
+  <attribute>
+   <name>betweenOR</name>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <!-- Forte4J_TLDX:  This comment contains code generation information. Do not delete.
+            <tldx>
+                <IsReferenceID>FALSE</IsReferenceID>
+                <ReferencesTag>FALSE</ReferencesTag>
+                <ReferenceScope>Session</ReferenceScope>
+                <ReferencesTagReferentFirst>TRUE</ReferencesTagReferentFirst>
+            </tldx>
+            -->
+  </attribute>
+  <attribute>
+   <name>view</name>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <!-- Forte4J_TLDX:  This comment contains code generation information. Do not delete.
+            <tldx>
+                <defaultValue>search+list</defaultValue>
+                <IsReferenceID>FALSE</IsReferenceID>
+                <ReferencesTag>FALSE</ReferencesTag>
+                <ReferenceScope>Session</ReferenceScope>
+                <ReferencesTagReferentFirst>TRUE</ReferencesTagReferentFirst>
+            </tldx>
+            -->
+  </attribute>
+  <attribute>
+   <name>foreignkey</name>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <!-- Forte4J_TLDX:  This comment contains code generation information. Do not delete.
+            <tldx>
+                <IsReferenceID>FALSE</IsReferenceID>
+                <ReferencesTag>FALSE</ReferencesTag>
+                <ReferenceScope>Session</ReferenceScope>
+                <ReferencesTagReferentFirst>TRUE</ReferencesTagReferentFirst>
+            </tldx>
+            -->
+  </attribute>
+  <attribute>
+   <name>relatedTable</name>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <!-- Forte4J_TLDX:  This comment contains code generation information. Do not delete.
+            <tldx>
+                <IsReferenceID>FALSE</IsReferenceID>
+                <ReferencesTag>FALSE</ReferencesTag>
+                <ReferenceScope>Session</ReferenceScope>
+                <ReferencesTagReferentFirst>TRUE</ReferencesTagReferentFirst>
+            </tldx>
+            -->
+  </attribute>
+  <attribute>
+   <name>relatedPK</name>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <!-- Forte4J_TLDX:  This comment contains code generation information. Do not delete.
+            <tldx>
+                <defaultValue>ID</defaultValue>
+                <IsReferenceID>FALSE</IsReferenceID>
+                <ReferencesTag>FALSE</ReferencesTag>
+                <ReferenceScope>Session</ReferenceScope>
+                <ReferencesTagReferentFirst>TRUE</ReferencesTagReferentFirst>
+            </tldx>
+            -->
+  </attribute>
+ </tag>
+ <tag>
+  <name>listitem</name>
+  <tag-class>aip.tag.search.ListItemTag</tag-class>
+  <body-content>JSP</body-content>
+  <!-- Forte4J_TLDX:  This comment contains code generation information. Do not delete.
+        <tldx>
+            <packagename>searchtag</packagename>
+            <extendsSupportClass>TRUE</extendsSupportClass>
+            <supportClass>BodyTagSupport</supportClass>
+            <implementsTryCatchFinally>FALSE</implementsTryCatchFinally>
+            <findparent>FALSE</findparent>
+        </tldx>
+        -->
+  <attribute>
+   <name>name</name>
+   <required>true</required>
+   <rtexprvalue>true</rtexprvalue>
+   <type>java.lang.String</type>
+   <!-- Forte4J_TLDX:  This comment contains code generation information. Do not delete.
+            <tldx>
+                <IsReferenceID>FALSE</IsReferenceID>
+                <ReferencesTag>FALSE</ReferencesTag>
+                <ReferenceScope>Session</ReferenceScope>
+                <ReferencesTagReferentFirst>TRUE</ReferencesTagReferentFirst>
+            </tldx>
+            -->
+  </attribute>
+ </tag>
+ <!-- A validator verifies that the tags are used correctly at JSP
+         translation time. Validator entries look like this: 
+      <validator>
+          <validator-class>com.mycompany.TagLibValidator</validator-class>
+          <init-param>
+             <param-name>parameter</param-name>
+             <param-value>value</param-value>
+	  </init-param>
+      </validator>
+   
+ A tag library can register Servlet Context event listeners in
+        case it needs to react to such events. Listener entries look
+        like this: 
+     <listener>
+         <listener-class>com.mycompany.TagLibListener</listener-class> 
+     </listener>
+   -->
+</taglib>

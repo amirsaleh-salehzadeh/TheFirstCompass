@@ -1,0 +1,18 @@
+ALTER TABLE `events` DROP FOREIGN KEY `events_ibfk_1`; ALTER TABLE `events` ADD CONSTRAINT `events_ibfk_1` FOREIGN KEY (`venue_id`) REFERENCES `findmedb`.`location_entrance`(`entrance_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+DROP TABLE venue;
+ALTER TABLE events DROP FOREIGN KEY events_ibfk_2;
+ALTER TABLE `events` CHANGE `start_time` `start_time` DATETIME NOT NULL;
+ALTER TABLE `events` CHANGE `end_time` `end_time` DATETIME NOT NULL;
+DROP INDEX `start_time` ON `events`;
+DROP TABLE calendar_date;
+DROP TABLE user_device;
+DROP TABLE titles;
+DROP TABLE log_activities;
+DROP TABLE ethnics;
+DROP TABLE devices;
+ALTER TABLE `events_category` CHANGE `parent_id` `parent_id` BIGINT(11) NULL;
+
+
+
+
+

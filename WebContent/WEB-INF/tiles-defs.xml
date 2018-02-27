@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+"http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+<tiles-definitions>
+
+	<definition name="baseLayout" path="/pages/siteLayout.jsp">
+		<put name="menu" value="/pages/menu.jsp" />
+	</definition>
+	
+	<definition name="page.security" extends="baseLayout">
+		<put name="title" value="Security Page" />
+		<put name="body" value="/security.do" />
+	</definition>
+	
+	<definition name="page.user" extends="baseLayout">
+		<put name="title" value="User Page" />
+		<put name="body" value="/user.do" />
+	</definition>
+	
+	<definition name="page.location" extends="baseLayout">
+		<put name="title" value="Location Page" />
+		<put name="body" value="/location.do" />
+	</definition>
+	
+	<definition name="page.newsfeed" extends="baseLayout">
+		<put name="title" value="NEWS Feed Page" />
+		<put name="body" value="/newsfeed.do" />
+	</definition>
+	
+</tiles-definitions>

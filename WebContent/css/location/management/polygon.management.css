@@ -1,0 +1,77 @@
+.toolBar {
+	background-color: rgba(8, 27, 44, 1) !important;
+	z-index: 33 !important;
+	position: absolute;
+	padding-left: 24;
+	padding-right: 24;
+	border: solid 3px;
+	border-color: rgb(248, 182, 36) !important;
+	border-radius: 0px 0px 24px 24px;
+}
+
+.SaveCancelBTNPanel, #locationSaveCancelPanel {
+	width: auto;
+	background-color: rgba(8, 27, 44, 1) !important;
+	z-index: 33 !important;
+/* 	position: fixed; */
+	padding-left: 0;
+	padding-right: 0;
+/* 	left: 0; */
+	border: solid 3px;
+	border-color: rgb(248, 182, 36) !important;
+	border-radius: 0px 0px 24px 24px !imporntant;
+	margin: 0;
+	padding: 0;
+}
+#locationSaveCancelPanel{
+	position: absolute;
+	display: inline-block;
+	width: 333px;
+}
+.SaveNextBTNPanel {
+	display: none;
+}
+
+#boundaryColorFieldset {
+	display: inline-block;
+	padding: 2px;
+	max-height: 48px;
+	color: rgb(248, 182, 36) !important;
+	text-shadow: none;
+	position: relative;
+	width: auto;
+	background-color: rgba(8, 27, 44, 1);
+}
+
+#boundaryColorFieldset>img {
+	display: inline-block;
+	padding: 2px;
+	max-height: 48px;
+	text-shadow: none;
+	width: auto;
+	background-color: rgba(8, 27, 44, 1);
+}
+
+.toolBar>img {
+	background-color: rgba(8, 27, 44, 1);
+	max-width: 48px;
+	max-height: 48px;
+	margin: 3px !important;
+	display: inline;
+	cursor: pointer;
+	border: solid 1px;
+	padding: 2px !important;
+}
+
+#boundaryColour {
+	min-width: 42px;
+	min-height: 42px;
+	/* 	background-color: #00ff00; */
+	/* 	border-color: #0000ff; */
+	border: solid 3px;
+	top: 0px;
+	display: inline-block;
+	margin-left: 5px !important;
+	margin-right: 5px !important;
+	margin: 4;
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 10, 2017 5:11:20 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="common.security.GroupENT" table="GROUPS">
+        <id name="groupID" type="int">
+            <column name="GROUP_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="groupName" type="java.lang.String">
+            <column name="GROUP_NAME" />
+        </property>
+        <property name="clientID" type="int">
+            <column name="CLIENT_ID" />
+        </property>
+        <property name="comment" type="java.lang.String">
+            <column name="COMMENT" />
+        </property>
+    </class>
+</hibernate-mapping>

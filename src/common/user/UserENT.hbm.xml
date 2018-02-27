@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 10, 2017 5:11:20 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="common.user.UserENT" table="USERS">
+        <id name="userName" type="java.lang.String">
+            <column name="USERNAME" />
+            <generator class="assigned" />
+        </id>
+        <property name="ethnicID" type="int">
+            <column name="ethnic" />
+        </property>
+         <property name="titleID" type="int">
+            <column name="title" />
+        </property>
+        <property name="clientID" type="int">
+            <column name="CLIENT_ID" />
+        </property>
+        <property name="password" type="java.lang.String">
+            <column name="password" />
+        </property>
+        <property name="registerationDate" type="java.lang.String">
+            <column name="REGISTERATION_DATE" />
+        </property>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+        <property name="surName" type="java.lang.String">
+            <column name="SURNAME" />
+        </property>
+        <property name="dateOfBirth" type="java.lang.String">
+            <column name="DATE_OF_BIRTH" />
+        </property>
+        <property name="gender" type="boolean">
+            <column name="GENDER" />
+        </property>
+        <property name="active" type="boolean">
+            <column name="ACTIVE" />
+        </property>
+    </class>
+</hibernate-mapping>

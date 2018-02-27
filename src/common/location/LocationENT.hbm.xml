@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 11, 2017 6:13:38 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="common.location.LocationENT" table="LOCATION">
+        <id name="locationID" type="long">
+            <column name="location_id" />
+            <generator class="identity" />
+        </id>
+        <property name="userName" type="java.lang.String">
+            <column name="USERNAME" />
+        </property>
+        <property name="country" type="int">
+            <column name="COUNTRY" />
+        </property>
+        <property name="address" type="java.lang.String">
+            <column name="ADDRESS" />
+        </property>
+        <property name="postBox" type="java.lang.String">
+            <column name="POST_BOX" />
+        </property>
+        <property name="gps" type="java.lang.String">
+            <column name="GPS" />
+        </property>
+        <property name="locationName" type="java.lang.String">
+            <column name="LOCATION_NAME" />
+        </property>
+<!--          <property name="locationType.locationId" type="int"> -->
+<!--             <column name="LOCATION_TYPE" /> -->
+<!--         </property> -->
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,155 @@
+.labelStyleClass {
+	display: none;
+	position: absolute;
+	z-index: 1200;
+	color: rgb(248, 182, 36);
+	font-size: 10pt;
+	background-color: rgba(8, 27, 44, 1) !important;
+	height: 20px;
+	text-shadow: none !important;
+	font-size: 14pt;
+	line-height: .5 em;
+	font-weight: bold;
+	padding: .4em .4em .4em .4em;
+	border: solid;
+	border-width: 2;
+	border-color: rgb(248, 182, 36);
+}
+
+#visitorCounter {
+	display: none;
+}
+
+#pageContents {
+	display: inline;
+	height: 100%;
+	width: 100%;
+}
+
+#videoContent {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	overflow: hidden;
+	transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+	z-index: 10000;
+}
+
+#cameraView {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	overflow: hidden;
+	transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+	z-index: 10000;
+}
+
+#map_canvas {
+	width: 100%;
+	display: block;
+	height: 100%;
+	position: absolute;
+	overflow: hidden;
+}
+
+#map_canvas.off {
+	-webkit-filter: blur(2px);
+	-moz-filter: blur(2px);
+	-o-filter: blur(2px);
+	-ms-filter: blur(2px);
+	filter: blur(2px);
+}
+
+#cameraView {
+	top: 111;
+	left: 66;
+	display: none;
+}
+
+/* COMPASS */
+.compass {
+	width: 70px; /* 130px */
+	height: 70px; /* 111px */
+	float: left;
+	bottom: 15%;
+	left: 0%;
+	display: inline-block;
+	position: absolute;
+	overflow: hidden;
+	z-index: 100;
+	display: inline-block;
+	padding: 4px 4px 4px 4px;
+}
+
+.compass .disc {
+	position: absolute;
+	z-index: 101;
+	background: url('http://dev.rvltn.eu/compass/compass.svg');
+	display: block;
+	width: 70px; /* 111px */
+	height: 70px; /* 111px */
+	background-size: 100%;
+}
+
+.compass .arrow {
+	position: absolute;
+	z-index: 103;
+	background: url('http://dev.rvltn.eu/compass/arrow.svg');
+	width: 70px; /* 111px */
+	height: 70px; /* 111px */
+	background-size: 100%;
+}
+
+/* NAVIGATE POPUP */
+#popupCurrentLocation {
+	height: 700px;
+	width: 1500px;
+	border: 1px solid #25729a;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	padding: 10px 10px 10px 10px;
+	display: inline-block;
+	color: #FFFFFF;
+	background-color: #3093c7;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#3093c7),
+		to(#1c5a85));
+	background-image: -webkit-linear-gradient(top, #3093c7, #1c5a85);
+	background-image: -moz-linear-gradient(top, #3093c7, #1c5a85);
+	background-image: -ms-linear-gradient(top, #3093c7, #1c5a85);
+	background-image: -o-linear-gradient(top, #3093c7, #1c5a85);
+	background-image: linear-gradient(to bottom, #3093c7, #1c5a85);
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,
+		startColorstr=#3093c7, endColorstr=#1c5a85);
+}
+
+.dashboardShow {
+	display: block;
+	min-width: 100%; /* 15% */
+	height: 100%;
+	z-index: 10;
+	background-color: rgb(8, 27, 44);
+	opacity: 0.77;
+	position: absolute; /* fixed */
+	color: white;
+	font-weight: lighter;
+	font-size: 10pt;
+	text-decoration: none;
+	text-align: left;
+	border: 2px solid #d1dcdf !important;
+	-webkit-border-radius: 7px !important;
+	-moz-border-radius: 7px !important;
+	border-radius: 7px !important;
+}
+
+/* LIST VIEW */
+.blurBlue {
+	position: absolute;
+	width: 100%;
+	z-index: -1;
+	background-color: rgba(8, 27, 44, 1);
+}

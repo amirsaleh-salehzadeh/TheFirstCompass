@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+<script src="../../js/jquery.min.js"></script>
+<script async defer
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABLdskfv64ZZa0mpjVcTMsEAXNblL9dyE&libraries=drawing&callback=initMap"
+	type="text/javascript"></script>
+<script type="text/javascript">
+	function fetchme() {
+		// 		var url = "https://maps.googleapis.com/maps/api/directions/json?origin="
+		// 				+ $("#departureGPS").val()
+		// 				+ "&destination="
+		// 				+ $("#destinationGPS").val()
+		// 				+ "&key=AIzaSyABLdskfv64ZZa0mpjVcTMsEAXNblL9dyE";
+
+		// 		$
+		// 				.ajax({
+		// 					url : url,
+		// 					cache : false,
+		// 					async : true,
+		// 					dataType : 'jsonp',
+		// 					success : function(data) {
+		// 						var latlng = "";
+		// 						console.log(data.routes.legs.steps.length);
+		// 						$(data.routes.legs.steps).each(
+		// 								function(k, v) {
+		// 									if (v == 0)
+		// 										latlng = k.start_location.lat + ","
+		// 												+ k.start_location.lng;
+		// 									else
+		// 										latlng += "_" + k.start_location.lat
+		// 												+ "," + k.start_location.lng
+		// 									console.log(v);
+		// 								});
+		// 						$("#pathLatLng").val(latlng);
+		// 					},
+		// 					error : function(xhr, ajaxOptions, thrownError) {
+		// 						alert("An error occured while saving the path. "
+		// 								+ thrownError);
+		// 					}
+		// 				});
+	}
+	function saveThePath() {
+		var url = "/MapBuddy/REST/GetPathWS/SavePath?fLocationId="
+				+ $("#departureId").val()
+				+ "&tLocationId="
+				+ $("#destinationId").val()
+				+ "&pathType=5&pathRoute="
+				+ $("#pathLatLng").val()
+				+ "&width=33&pathName=&description=&pathId=0";
+		$.ajax({
+			url : url,
+			cache : false,
+			async : true,
+			success : function(data) {
+				alert("The path saved successfully");
+			},
+			error : function(xhr, ajaxOptions, thrownError) {
+				alert("An error occured while saving the path. "
+						+ thrownError);
+			}
+		});
+	}
+
+	function initMap() {
+		var pointA = new google.maps.LatLng(parseFloat($("#departureGPS").val()
+				.split(",")[0]),
+				parseFloat($("#departureGPS").val().split(",")[1])), pointB = new google.maps.LatLng(
+				parseFloat($("#destinationGPS").val().split(",")[0]),
+				parseFloat($("#destinationGPS").val().split(",")[1])), myOptions = {
+			zoom : 7,
+			center : pointA
+		}, map = new google.maps.Map(document.getElementById('map-canvas'),
+				myOptions),
+		// Instantiate a directions service.
+		directionsService = new google.maps.DirectionsService, directionsDisplay = new google.maps.DirectionsRenderer(
+				{
+					map : map
+				}), markerA = new google.maps.Marker({
+			position : pointA,
+			title : "point A",
+			label : "A",
+			map : map
+		}), markerB = new google.maps.Marker({
+			position : pointB,
+			title : "point B",
+			label : "B",
+			map : map
+		});
+
+		// get route from A to B
+		calculateAndDisplayRoute(directionsService, directionsDisplay, pointA,
+				pointB);
+
+	}
+
+	function calculateAndDisplayRoute(directionsService, directionsDisplay,
+			pointA, pointB) {
+		directionsService.route({
+			origin : pointA,
+			destination : pointB,
+			avoidTolls : true,
+			avoidHighways : false,
+			travelMode : google.maps.TravelMode.DRIVING
+		}, function(data, status) {
+			var latlng = "";
+			// 			console.log(data.routes[0].legs[0].steps.length);
+			console.log(data.routes[0].overview_path.length);
+			$(data.routes[0].overview_path).each(function(v, k) {
+				// 						if (v == 0)
+				// 							latlng = k.start_location.lat() + ","
+				// 									+ k.start_location.lng();
+				// 						else
+				// 							latlng += "_" + k.start_location.lat() + ","
+				// 									+ k.start_location.lng()
+				// 						console.log(v);
+				// 						if(v == data.routes[0].legs[0].steps.length - 1)
+				// 							latlng += "_" + k.end_location.lat() + ","
+				// 							+ k.end_location.lng()
+				if (v == 0)
+					latlng = k.lat() + "," + k.lng();
+				else
+					latlng += "_" + k.lat() + "," + k.lng()
+				console.log(v);
+				// 						if (v == data.routes[0].legs[0].steps.length - 1)
+				// 							latlng += "_" + k.end_location.lat() + ","
+				// 									+ k.end_location.lng()
+			});
+			$("#pathLatLng").val(latlng);
+			if (status == google.maps.DirectionsStatus.OK) {
+				directionsDisplay.setDirections(data);
+			} else {
+				window.alert('Directions request failed due to ' + status);
+			}
+		});
+	}
+</script>
+<style type="text/css">
+html,body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#map-canvas {
+	height: 100%;
+	width: 100%;
+}
+</style>
+</head>
+<body>
+<!-- 	<input type='text' placeholder="pathLatLng" id="pathLatLng"> -->
+	<textarea rows="4" cols="4" id="pathLatLng"></textarea>
+	<input type='text' placeholder="destinationId" id="destinationId"
+		value="">
+	<input type='text' placeholder="destinationGPS" id="destinationGPS"
+		value="">
+	<input type='text' placeholder="departureId" id="departureId" value="">
+	<input type='text' placeholder="departureGPS" id="departureGPS"
+		value="">
+	<input type="button" onclick="saveThePath()" value="save">
+	<input type="button" onclick="initMap()" value="fetch">
+
+	<div id="map-canvas"></div>
+</body>
+</html>

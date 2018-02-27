@@ -1,0 +1,145 @@
+<head>
+[JQUERY]
+<style type="text/css">
+th.dt-center,td.dt-center {
+	text-align: center;
+}
+
+#gridList td {
+	text-align: center;
+}
+</style>
+<script type="text/javascript">
+var x, y;
+function displaySearch() {
+	if ($("#searchFilters").css("display") == "block") {
+		$("#searchFilters").fadeOut();
+	} else
+		$("#searchFilters").fadeIn();
+	$(".ui-popup-active").css("display", "none");
+}
+function refreshGrid() {
+	var url = $("#dataFilterGridMainPage").attr("action");
+	$("#reqCodeGrid").val("gridJson");
+	url += "?" + $("#dataFilterGridMainPage").serialize();
+	$('#gridList')
+			.dataTable(
+					{
+						serverSide : true,
+						processing : true,
+						destroy : true,
+						bJQueryUI : true,
+						bPaginate : false,
+						bLengthChange : false,
+						bFilter : false,
+						bSort : false,
+						ajax : {
+							url : url
+						},
+						columnDefs : [
+								{
+									'targets' : 0,
+									'searchable' : false,
+									'orderable' : false,
+									'render' : function(data, type, full, meta) {
+										return '<input type="checkbox" class="gridCheckBoxes" id="'+ $('<div/>').text(data).html()
+										+ '" data-inline="true" data-mini="true">';
+									}
+								} ],
+						columns : [VARCOLUMNS],
+						initComplete : function(settings, json) {
+							if(json.successm!= undefined){
+								popSuccessMessage(json.successm);
+							}
+							if(json.errorm != undefined){
+								popSuccessMessage(json.errorm);
+							}
+							$('#[POPUPID]').trigger("create");
+							$('#paginationContainerDiv').trigger("create");
+							$('.gridCheckBoxes').each(function(){
+								$(this).attr('id', $(this).parent().parent().parent().attr('id'));
+							});
+						}
+					});
+	(function($){
+	    $.fn.disableSelection = function() {
+	        return this
+	                 .attr('unselectable', 'on')
+	                 .css('user-select', 'none')
+	                 .on('selectstart', false);
+	    };
+	})(jQuery);
+	$('#checkAllHead').on('click', function(){
+	      var rows = table.rows({ 'search': 'applied' }).nodes();
+	      $('input[type="checkbox"]', rows).prop('checked', this.checked);
+	      $('#checkAllFoot').prop('checked', this.checked);
+	   });
+	$('#checkAllFoot').on('click', function(){
+	      var rows = table.rows({ 'search': 'applied' }).nodes();
+	      $('input[type="checkbox"]', rows).prop('checked', this.checked);
+	      $('#checkAllHead').prop('checked', this.checked);
+	   });
+	$(document).on( "mousemove", function( event ) {
+		x = event.pageX;
+		y = event.pageY;
+		});
+	$(".ui-popup-active").css("display", "none");
+	var table = $('#gridList').DataTable();
+	$('#gridList tbody').on("taphold", "tr", function() {
+		$( "#gridMenuSetting" ).on( "popupbeforeposition" , function (e, ui) {
+		    ui.x = x;
+		    ui.y = y;
+		});
+		var html;
+		if($("#replacedID4Popup").val()=="")
+			html = $('#gridMenuSetting').html().replace(new RegExp('REPLACEME', 'g'),$(this).attr("id"));
+		else
+			html = $('#gridMenuSetting').html().replace(new RegExp($("#replacedID4Popup").val(), 'g'),$(this).attr("id"));
+		$("#replacedID4Popup").val($(this).attr("id"));
+		$("#gridMenuSetting").html(html);
+		 $('#gridMenuSetting').trigger('create');
+		$('#gridMenuSetting').popup("open");
+	});
+}
+
+function tapholdHandler( event ){
+    $( event.target ).addClass("taphold");
+  }
+</script>
+</head>
+<div id="paginationContainerDiv">
+	<input type="hidden" id="replacedID4Popup" value=""> <input
+		type="hidden" name="deleteID" id="deleteID" value="">
+	<div data-type="horizontal">
+		<table width="100%">
+			<tr id="controllerRow">
+				<td><div>
+						<a href="#[POPUPID]" data-rel="popup" id="mainBodyMenuSettingBTN"
+							class="ui-btn ui-corner-all 
+							ui-nodisc-icon ui-shadow"
+							data-mini="true"></a>
+						<div data-role="popup" id="[POPUPID]" class="main-setting-menu"
+							data-theme="d">
+							<ul data-role="listview" data-inset="true"
+								style="min-width: 210px;" data-theme="d">[CONTENTPOPUP]
+							</ul>
+						</div>
+					</div></td>
+				<td><select name='pageSize' data-native-menu='false'
+					onchange='refreshGrid();' data-inline='true'
+					style='min-height: 11px;' data-mini='true'>
+						<option value='10' selected='selected'>10</option>
+						<option value='25'>25</option>
+						<option value='50'>50</option>
+						<option value='100'>100</option>
+				</select></td>
+				<td style="width: 100%">[CONTENT]</td>
+			</tr>
+		</table>
+
+
+	</div>
+	<div>[PLACEHOLDER]</div>
+	<div id="popupGridContainer">[GRIDPOPUP]</div>
+	<div id="popupsGridContainer"></div>
+</div>

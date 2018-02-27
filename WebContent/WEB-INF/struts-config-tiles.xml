@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<data-sources />
+	<form-beans />
+	<global-exceptions />
+	<global-forwards />
+	<action-mappings>
+		<action path="/t_security" type="struts.actions.tiles.T_SecurityAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="roleManagement" path="page.security" />
+			<forward name="roleEdit" path="page.security" />
+			<forward name="groupManagement" path="page.security" />
+			<forward name="groupEdit" path="page.security" />
+			<forward name="userBuildings" path="page.security" />
+		</action>
+		<action path="/t_newsfeed" type="struts.actions.tiles.T_NEWSFeedAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="newsFeedList" path="page.newsfeed" />
+			<forward name="mapView" path="page.location" />
+		</action>
+		<action path="/t_user" type="struts.actions.tiles.T_UserAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="userManagement" path="page.user" />
+			<forward name="userEdit" path="page.user" />
+		</action>
+		<action path="/t_location" type="struts.actions.tiles.T_LocationAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="locationManagement" path="page.location" />
+			<forward name="locationEdit" path="page.location" />
+			<forward name="pathManagement" path="page.location" />
+			<forward name="register" path="page.location" />
+		</action>
+
+	</action-mappings>
+	<message-resources parameter="mic.crm.struts.tiles.ApplicationResources" />
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />
+		<set-property property="moduleAware" value="true" />
+		<set-property property="definitions-parser-validate"
+			value="true" />
+	</plug-in>
+</struts-config>
+

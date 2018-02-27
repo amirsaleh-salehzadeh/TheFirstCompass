@@ -1,0 +1,43 @@
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" type="text/css" href="images/skin/tree/aipskin_tree.css">
+
+	    <script src="js/common/aip.niopdc.dialogWindow.js" type="text/javascript"></script>
+        <script src="js/common/interface/idrag.js" type="text/javascript"></script>
+        <script src="js/common/interface/iutil.js" type="text/javascript"></script>
+		<script src="js/common/aip.niopdc.dialogPopup.js" type="text/javascript"></script>			
+
+		<script src="js/common/jquery.tree-pack.js" type="text/javascript"></script>        
+		<script src="js/common/jquery.quicksearch.pack.js" type="text/javascript"></script>        
+		<script src="js/common/aip.niopdc.treePopup.js" type="text/javascript"></script>        
+
+		<script src="images/skin/tree/aipskin_tree.js" type="text/javascript"></script>
+</head>
+
+<div id="PREFIXWrapper" class="green popupBase" align="[ALIGN]"> 
+	<div id="PREFIXCollapse" class="popupDiv" align="[ALIGN]">
+		<table id="PREFIXDragHandle" class="dragHandle">
+			<tr>
+				<td>
+					<span class="close"></span>
+				</td>
+				<td>
+					<span id="popupText">[TITLE]</span>
+				</td>
+			</tr>
+		</table>
+		<form id="PREFIXPopupForm" class="popupForm" method="post">
+			<div id="PREFIXTree" class="tree">
+<!--				<img src="images/icons/loading.gif" width="36px" height="36px" class="loading"/>-->
+				<div id="PREFIXTitlesView" class="popupTitlesView">
+					[PLACEHOLDER]
+				</div>
+			</div>
+			<div id="buttonsDiv">
+				<input type="button" value="ثبت" id="commit"  class="btnOk"/>
+				<input type="button" value="بازگشت" id="cancel" class="btnReset" />
+			</div>
+		</form>
+		<img src="images/icons/window_resize.gif" id="PREFIXWindowResize" class="windowResize" />
+	</div>
+</div>

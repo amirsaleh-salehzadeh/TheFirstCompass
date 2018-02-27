@@ -1,0 +1,9 @@
+ALTER TABLE `location` ADD `is_private` TINYINT(1) NOT NULL DEFAULT '0' AFTER `icon`;
+ALTER TABLE `location` ADD `client_id` INT(255) NOT NULL AFTER `icon`;
+UPDATE `location` SET `client_id`= 4 WHERE 1;
+ALTER TABLE `location` ADD INDEX(`client_id`);
+ALTER TABLE `location` DROP FOREIGN KEY `location_ibfk_1`; ALTER TABLE `location` ADD CONSTRAINT `location_ibfk_1` FOREIGN KEY (`client_id`) REFERENCES `findmedb`.`clients`(`client_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+ALTER TABLE `location` DROP `client_name`;
+
+
+

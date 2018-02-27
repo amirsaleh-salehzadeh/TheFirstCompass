@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<data-sources />
+	<form-beans />
+	<global-exceptions />
+	<global-forwards />
+	<action-mappings>
+		<action path="/security" type="struts.actions.SecurityAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="roleManagement" path="/pages/security/roleManagement.jsp" />
+			<forward name="roleEdit" path="/pages/security/roleEdit.jsp" />
+			<forward name="groupManagement" path="/pages/security/groupManagement.jsp" />
+			<forward name="groupEdit" path="/pages/security/groupEdit.jsp" />
+			<forward name="groupRole" path="/pages/security/groupRole.jsp" />
+			<forward name="userBuildings" path="/pages/security/userBuildings.jsp" />
+			<forward name="gridJson" path="/pages/json.jsp" />
+		</action>
+		<action path="/location" type="struts.actions.LocationAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="locationManagement" path="/pages/location/locationManagement.jsp" />
+			<forward name="locationEdit" path="/pages/location/locationEdit.jsp" />
+			<forward name="searchLocations" path="/pages/location/searchLocations.jsp" />
+			<forward name="pathManagement" path="/pages/location/pathManagement.jsp" />
+			<forward name="cameraNavigation" path="/pages/location/cameraNavigation.jsp" />
+			<forward name="gridJson" path="/pages/json.jsp" />
+		</action>
+		<action path="/user" type="struts.actions.UserAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="userManagement" path="/pages/user/userManagement.jsp" />
+			<forward name="userEdit" path="/pages/user/userEdit.jsp" />
+			<forward name="passwordChange" path="/pages/user/passwordChange.jsp" />
+			<forward name="userRole" path="/pages/user/userRole.jsp" />
+			<forward name="userGroup" path="/pages/user/userGroup.jsp" />
+			<forward name="login" path="/login.html" />
+			<forward name="register" path="/pages/user/register.html" />
+			<forward name="gridJson" path="/pages/json.jsp" />
+			<forward name="userBuildings" path="/pages/user/userBuildings.jsp" />
+		</action>
+		<action path="/newsfeed" type="struts.actions.NEWSFeedAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="newsFeedList" path="/pages/newsFeed/newsFeedList.jsp" />
+			<forward name="mapView" path="/pages/location/map.jsp" />
+		</action>
+		<action path="/mapBuddyNavigation" type="struts.actions.MapBuddyNavigationAction">
+			<set-property property="cancellable" value="true" />
+			<forward name="mapView" path="/pages/location/map.jsp" />
+			<forward name="arView" path="/pages/location/ar.jsp" />
+		</action>
+		<action parameter="reqCode" path="/logOut" type="struts.actions.LogOutAction">
+			<set-property property="cancellable" value="true" />
+		</action>
+	</action-mappings>
+
+	<message-resources parameter="mic.crm.struts.ApplicationResources" />
+
+</struts-config>
+

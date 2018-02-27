@@ -1,0 +1,178 @@
+.popupSearchResultCloseBTNContainer {
+	margin: 4px;
+}
+
+#resultsListViewContentDiv>h3,.parentCollapsibleLV a {
+	background-color: transparent !important;
+	border-color: rgb(248, 182, 36) !important;
+	border-left: 0px;
+	border-right: 0px;
+	color: rgb(248, 182, 36) !important;
+	text-shadow: none !important;
+	padding: 9px;
+	font-size: 14px;
+}
+
+#resultsListViewContentDiv {
+/* 	padding-top: 30px; */
+	background-color: transparent !important;
+	border-color: rgb(248, 182, 36) !important;
+}
+
+.parentCollapsibleLV div {
+	height: 3% auto !important;
+	background-color: rgba(8, 27, 44, .66) !important;
+	border: 0px !important;
+}
+
+#resultsListViewContentDiv>li p {
+	background-color: transparent !important;
+	border-color: rgb(248, 182, 36) !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.resultsListViewContent {
+	background-color: transparent !important;
+	text-shadow: none !important;
+	color: rgb(248, 182, 36) !important;
+	height: 40px !important;
+	/* 	min-height: 50px !important; */
+	max-width: 100% !important;
+	padding-left: .33em !important;
+}
+
+.resultsListViewContent p {
+	text-shadow: none !important;
+	/* 	color: rgb(248, 182, 36) !important; */
+	color: transparent !important;
+	max-width: 100% !important;
+	margin: .05em !important;
+	font-size: 9pt !important;
+	padding: 0 !important;
+	position: absolute !important;
+}
+
+.resultsListViewContent h2 {
+	background-color: transparent !important;
+	text-shadow: none !important;
+	color: rgb(248, 182, 36) !important;
+	max-width: 100% !important;
+	margin: .11em !important;
+	font-size: 11pt !important;
+/* 	line-height: 1 !important; */
+	font-weight: normal !important;
+}
+
+.listItemParentItem a {
+	background-color: rgb(8, 27, 44) !important;
+}
+
+.resultsListViewContent.ui-btn,#resultsListViewContentDiv li {
+	padding: 4px;
+	border-color: rgb(248, 182, 36) !important;
+	border-right: 0em !important;
+	border-left: 0em !important;
+	border-radius: 0em !important;
+	max-height: 27px !important;
+	/* 	margin: 0 !important; */
+}
+
+#destinationNameDiv {
+	/* 	padding-left: 1.1em; */
+	margin-right: 1.1em !important;
+}
+
+#destinationName {
+	background-color: rgba(8, 27, 44, .77) !important;
+	color: rgb(248, 182, 36) !important;
+	background-image: url("../../images/icons/search.png");
+	background-repeat: no-repeat;
+	background-size: 32px 32px;
+	background-position: 9px 10px;
+	padding-bottom: 5px;
+	padding-left: 47px;
+	padding-right: 33px;
+	margin: 0 auto !important;
+	text-shadow: none;
+	min-height: 2em !important;
+	z-index: 11;
+	left: 7;
+	border: none;
+	font-size: 13pt;
+	font-weight: 200;
+}
+
+.listViewIcons {
+	margin: 0 auto !important;
+	width: 48px;
+	height: 48px;
+	padding-top: 1px;
+	left: 5 !important;
+}
+
+#destinationName::-webkit-input-placeholder,#searchField::-webkit-input-placeholder
+	{
+	color: rgb(248, 182, 36);
+	padding-left: 1em !important;
+	font-weight: bolder;
+}
+
+div#destinationNameDiv span,div#searchFieldDiv span {
+	position: absolute !important;
+	display: block;
+	bottom: 11;
+	right: 9px;
+	width: 32px !important;
+	height: 32px !important;
+	background-image: url("../../images/icons/clearInput.png");
+	background-repeat: no-repeat;
+	background-size: 32px 32px;
+	cursor: pointer;
+	top: .2em !important;
+	z-index: 101 !important;
+}
+
+div#searchFieldDiv {
+	z-index: 101 !important;
+	position: absolute !important;
+	width: 100%;
+}
+
+#searchField {
+	color: rgb(248, 182, 36) !important;
+	background-color: transparent !important;
+	background-image: url("../../images/icons/search.png");
+	background-repeat: no-repeat;
+	background-size: 27px 27px;
+	background-position: 3px 5px;
+	text-shadow: none;
+	min-height: 2.2em !important;
+	padding-left: 37px;
+	padding-right: 29px;
+	border: 0;
+	border-bottom: 2px solid rgb(248, 182, 36) !important;
+	width: 100% !important;
+	font-size: 13pt;
+	font-weight: normal !important;
+	margin: 0 !important;
+	/* 	box-shadow: 0 0 2em #f5b325; */
+}
+
+.locationTypes {
+	text-shadow: none !important;
+}
+
+#destinationNameHeader {
+	font-size: 12pt;
+}
+
+#resultsListViewDiv {
+	position: fixed;
+	bottom: 11px !important;
+	top: 88px !important;
+	left: 7px !important;
+	right: 7px !important;
+	overflow: auto !important;
+	z-index: 1;
+}

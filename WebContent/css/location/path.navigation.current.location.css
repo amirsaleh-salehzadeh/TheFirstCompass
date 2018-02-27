@@ -1,0 +1,51 @@
+#currentLocationShow {
+	width: 111px;
+	min-height: 135px;
+	display: block;
+	z-index: 10;
+	position: absolute;
+	background-color: transparent !important;
+	text-decoration: none;
+	text-align: center;
+	text-shadow: none !important;
+	-webkit-border-bottom-left-radius: 7px !important;
+	-moz-border-bottom-left-radius: 7px !important;
+	border-bottom-left-radius: 7px !important;
+	right: 0;
+	float: right;
+	top: 19px; /* 20% */
+	overflow: hidden !important;
+	margin: 0 auto !important;
+}
+
+#currentLocationInf {
+	display: block;
+	width: 80% !important;
+	color: rgba(8, 27, 44, .66) !important;
+	z-index: 12;
+	font-size: 10pt;
+	font-weight: bold;
+	padding-left: .33em;
+}
+
+#directionShow {
+/* 	position: absolute; */
+	background-color: rgba(8, 27, 44, .66);
+	display: block;
+	height: 100%;
+	width: 100%;
+	top: 24px;
+}
+
+#distanceToNextPoint {
+	position: absolute;
+	font-size: 100%;
+	font-weight: bold;
+	color: rgb(248, 182, 36);
+	max-height: 33px;
+	width: 111px;
+	background-color: rgba(8, 27, 44, .4);
+	z-index: 110;
+	top: 0;
+	right: 0;
+}

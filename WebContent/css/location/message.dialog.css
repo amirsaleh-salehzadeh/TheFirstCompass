@@ -1,0 +1,236 @@
+/* MESSAGE BOXES 
+ERROR*/
+#popupErrorMessage {
+	background-color: rgba(8, 27, 44, 1) !important;
+	min-width: 98% !important;
+	border: 3px solid !important;
+	border-top: 0 !important;
+	border-color: rgb(255, 0, 0) !important;
+	border-radius: 0px 0px 11px 11px;
+	position: fixed;
+	z-index: 110;
+}
+
+.popupGridItem {
+	margin-top: 7px;
+	padding: 7px;
+	border-radius: 11px !important;
+	text-shadow: none;
+	color: rgba(248, 182, 36, 1) !important;
+	text-align: center;
+	font-size: 14pt;
+	font-weight: bolder;
+}
+
+.popupGridItem a {
+	cursor: pointer;
+	padding-top: 11px;
+	padding-bottom: 11px;
+	margin: 0px auto !important;
+	background-color: rgba(248, 182, 36, 1) !important;
+	color: rgba(8, 27, 44, 1) !important;
+	border-color: transparent !important;
+	border-radius: 7px !important;
+	text-shadow: none !important;
+	font-size: 14pt;
+	z-index: 100;
+	border: 1px solid;
+	margin: 0px auto !important;
+	top: -7px;
+}
+
+.popupGridItem img {
+	width: 40px;
+	height: 40px;
+	background-color: rgba(8, 27, 44, 1) !important;
+	border-color: rgb(248, 182, 36) !important;
+	padding: 4px 11px !important;
+	box-shadow: none !important;
+	position: absolute !important;
+	float: left !important;
+	left: 0;
+	top: 0;
+}
+
+#closePopupSelectDeparture {
+	background-color: red !important;
+}
+
+/* MESSAGE BOXES 
+ARRIVAL*/
+#popupArrivalMessage {
+	background-color: rgba(8, 27, 44, 1) !important;
+	min-width: 177px !important;
+	border: 3px solid !important;
+	border-color: rgb(248, 182, 36) !important;
+	border-radius: 0px 0px 11px 11px;
+}
+
+/* MESSAGE BOXES 
+SEARCH RESULT*/
+#popupSearchResult {
+	background-color: rgba(8, 27, 44, .88) !important;
+	min-width: 100% !important;
+	height: 100% !important; margin : 0 auto !important;
+	right: 0 !important;
+	top: 3 !important;
+	left: 0 !important;
+	bottom: 3 !important;
+	border-color: rgb(248, 182, 36) !important;
+	border: 2px solid;
+	border-radius: 0px 0px 11px 11px;
+	overflow: hidden !important;
+	border-radius: 0px 0px 11px 11px;
+	margin: 0 auto !important;
+}
+
+#popupSelectDeparture {
+	background-color: rgba(8, 27, 44, .88) !important;
+	min-width: 100% !important;
+	margin: 0 auto !important;
+	right: 0 !important;
+	top: 3 !important;
+	left: 0 !important;
+	bottom: 3 !important;
+	border-color: rgb(248, 182, 36) !important;
+	border: 2px solid;
+	border-radius: 0px 0px 11px 11px;
+	overflow: hidden !important;
+	border-radius: 0px 0px 11px 11px;
+}
+
+#popupSearchResult-popup {
+	top: 0em !important;
+	background: transparent !important;
+	height: 100%;
+	bottom: 3 !important;
+}
+
+.ui-popup-container,.ui-popup {
+	width: 100% !important;
+}
+
+/* CONTENTS 
+ARRIVAL */
+#arrivalMessageContent {
+	background-color: rgba(8, 27, 44, 1) !important;
+	cursor: pointer;
+	margin: 10% auto;
+	color: rgba(248, 182, 36, 1) !important;
+	text-shadow: none !important;
+}
+
+/* CONTENTS 
+ERROR 
+CONTENT
+*/
+#errorMessageContent {
+	color: rgb(248, 182, 36);
+	text-shadow: none !important;
+	margin: 10% auto;
+	padding: 11px;
+	position: fixed;
+	top: 5.3em;
+}
+
+/* CONTENTS 
+ERROR
+HEADER*/
+#errorMessageHeader {
+	height: 1.11em;
+	background-color: rgba(248, 0, 0, .88) !important;
+	text-shadow: none !important;
+	text-align: center;
+	font-size: 14pt;
+	font-weight: bold;
+	padding-top: 2.66em;
+	padding-bottom: .22em;
+	color: rgba(8, 27, 44, 1) !important;
+	background-image: url("../../images/icons/error.png");
+	background-size: 48px 48px;
+	background-repeat: no-repeat;
+	background-position: 50% 3;
+}
+
+/* CONTENTS 
+ARRIVAL
+HEADER*/
+#arrivalMessageHeader {
+	min-height: 2em;
+	color: rgba(248, 182, 36, 1) !important;
+	text-shadow: none !important;
+	font-size: 14pt;
+	font-weight: bold;
+	padding-top: .44em;
+	padding-left: 2.7em;
+	border-bottom: 1px solid rgba(248, 182, 36, 1);
+	border-top: 1px solid rgba(248, 182, 36, 1);
+	background-color: rgba(8, 27, 44, 1) !important;
+	background-image: url("../../images/icons/map-markers/building.png");
+	background-size: 32px 32px;
+	background-repeat: no-repeat;
+	background-position: 3px;
+}
+
+.closePopupMessage {
+	cursor: pointer;
+	margin: 0px auto !important;
+	background-color: rgba(8, 27, 44, 1) !important;
+	/* 	background-color: transparent */
+	border: 1px solid;
+	color: rgba(248, 182, 36, 1) !important;
+	border-color: transparent !important;
+	border-radius: 7px !important;
+	text-shadow: none !important;
+	z-index: 100;
+}
+
+.closeMessageButtonIcon {
+	width: 22px;
+	height: 22px;
+	background-color: red !important;
+	border: 3px double !important;
+	border-color: rgba(8, 27, 44, 1) !important;
+	border-radius: 100% !important;
+	padding: 1px 1px !important;
+	box-shadow: none !important;
+	position: absolute !important;
+	float: left;
+	left: 2;
+	top: 1;
+}
+
+#popupSearchResultCloseBTN,#popupErrorMessageCloseBTN,#popupArrivalMessageCloseBTN
+	{
+	bottom: 2;
+	right: 1;
+	left: 1;
+	/* 	width: 100% !important; */
+	font-size: 10pt;
+	border: 2px solid !important;
+	border-color: red !important;
+	padding: 0.56em 1em !important;
+	border-radius: 7px !important;
+}
+
+#popupSearchResultCurrentLocationBTN {
+	bottom: 1;
+	right: 1;
+	left: 1;
+	width: auto !important;
+	font-size: 10pt;
+	padding-left: 37px !important;
+	border: 2px solid !important;
+	border-color: #0091FF !important;
+	border-radius: 7px !important;
+	padding: 0.56em 1em 0.56em 2.2em !important;
+	/* 	color: #0091FF !important; */
+}
+
+#popupSearchResultCurrentLocationBTN img {
+	background-color: #0091ff !important;
+}
+
+/* #popupErrorMessageCloseBTN,#popupArrivalMessageCloseBTN { */
+/* 	bottom: 0 !important; */
+/* } */

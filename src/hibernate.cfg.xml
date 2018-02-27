@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.dialect">
+			org.hibernate.dialect.MySQLDialect
+		</property>
+	<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/nmmumobile?characterEncoding=utf8</property>
+	<property name="hibernate.connection.username">root</property>
+	<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+
+<!--   		<property name="hibernate.connection.url">jdbc:mysql://postgrad.nmmu.ac.za:3306/nmmumobile?characterEncoding=utf8</property>   -->
+<!--  		<property name="hibernate.connection.username">nmmu_mobile_user</property>   -->
+<!--  		<property name="hibernate.connection.password">Dfjr9bg834gmb</property>   -->
+
+
+<!-- 	LIVE SERVER NEVER USE IT >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
+<!-- 	>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
+<!-- 		<property name="hibernate.connection.url">jdbc:mysql://lnxsql-sc1.nmmu.ac.za:3306/findmedb?characterEncoding=utf8</property> -->
+<!-- 		<property name="hibernate.connection.username">findmeuser</property> -->
+<!-- 		<property name="hibernate.connection.password">findM32017*&</property> -->
+<!-- 	>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
+		
+
+		<!-- <property name="hibernate.c3p0.min_size">5</property> -->
+		<!-- <property name="hibernate.c3p0.max_size">90</property> -->
+		<!-- <property name="hibernate.c3p0.max_statements">500</property> -->
+		<!-- <property name="hibernate.c3p0.timeout">25200</property> -->
+		<!-- <property name="hibernate.c3p0.preferredTestQuery">select 1;</property> -->
+		<!-- <property name="hibernate.c3p0.idle_test_period">14400</property> -->
+		<property name="hibernate.transaction.factory_class">
+			org.hibernate.transaction.JDBCTransactionFactory
+		</property>
+		<property name="current_session_context_class">thread</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+		<mapping resource="common/security/RoleENT.hbm.xml" class="common.security.RoleENT" />
+		<mapping resource="common/security/GroupENT.hbm.xml" class="common.security.GroupENT" />
+		<mapping resource="common/user/EthnicENT.hbm.xml" class="common.user.EthnicENT" />
+		<mapping resource="common/user/TitleENT.hbm.xml" class="common.user.TitleENT" />
+		<mapping resource="common/user/UserENT.hbm.xml" class="common.user.UserENT" />
+		<mapping resource="common/client/ClientENT.hbm.xml" class="common.client.ClientENT" />
+		<mapping resource="common/location/LocationENT.hbm.xml" class="common.location.LocationENT" />
+		<mapping resource="common/location/CountryENT.hbm.xml" class="common.location.CountryENT" />
+	</session-factory>
+</hibernate-configuration>

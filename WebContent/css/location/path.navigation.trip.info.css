@@ -1,0 +1,218 @@
+#barcodeDescription {
+	position: absolute;
+	display: block;
+	max-width: 100%;
+	left: 0;
+	right: 0 !important;
+	bottom: 0;
+	min-height: 48px;
+	text-align: center;
+	background-color: rgba(8, 27, 44, 1);
+	z-index: 10;
+	font-weight: bold;
+	font-size: 13pt;
+	text-decoration: none;
+	text-shadow: none;
+	padding-left: .22em;
+	color: rgb(248, 182, 36) !important;
+	z-index: 90 !important;
+	min-height: 88 !important;
+}
+
+.pathTypeMethodButton {
+	text-align: center !important;
+}
+
+.descriptionInput {
+	color: rgb(248, 182, 36) !important;
+	text-shadow: none;
+	height: 33px !important;
+	min-height: 1em !important;
+	border: 1px solid rgb(248, 182, 36) !important;
+	padding-left: 33px !important;
+	/* 	margin-left: 13px; */
+	margin-top: 3px;
+	border-radius: 7px;
+	width: 100%;
+	float: right;
+	display: block;
+	background-color: transparent !important;
+	text-shadow: none !important;
+}
+
+#departureDescriptionInput {
+	background-image: url("../../images/icons/target.png") !important;
+	background-repeat: no-repeat !important;
+	background-size: 27px 27px !important;
+	background-position: 2px 2px !important;
+}
+
+#departureDescriptionSpan,#destinationDescriptionSpan {
+	font-size: 12pt;
+	font-weight: bold;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#tripTypeBar {
+	border: 1px solid rgb(248, 182, 36) !important;
+	border-bottom: none !important;
+	border-left: none !important;
+	border-right: none !important;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: block;
+}
+
+#destinationDescriptionInput {
+	background-image: url("../../images/icons/finishss.png") !important;
+	background-repeat: no-repeat !important;
+	background-size: 27px 27px !important;
+	background-position: 2px 2px !important;
+}
+
+#start {
+	background-image: url("../../images/icons/startBlue.png") !important;
+	background-repeat: no-repeat;
+	background-size: 32px 32px;
+	background-color: rgb(248, 182, 36) !important;
+	background-position: 2% 41% !important;
+	border: 2px solid rgb(8, 27, 44);
+	min-height: 33px !important;
+	display: block;
+	position: absolute !important;
+	color: rgb(8, 27, 44) !important;
+	font-size: 14px;
+	text-decoration: none;
+	text-shadow: none !important;
+	text-transform: uppercase;
+	text-align: center !important;
+	padding-top: .3em;
+	padding-left: 41px !important;
+	padding-right: 7 !important;
+/* 	width: 166px; */
+	z-index: 102;
+	font-weight: bold;
+/* 	-webkit-animation-name: rotate; */
+/* 	-webkit-animation-duration: 2s; */
+/* 	-webkit-animation-iteration-count: infinite; */
+/* 	-webkit-animation-timing-function: linear; */
+/* 	-moz-animation-name: rotate; */
+/* 	-moz-animation-duration: 2s; */
+/* 	-moz-animation-iteration-count: infinite; */
+/* 	-moz-animation-timing-function: linear; */
+}
+
+@-webkit-keyframes rotate { 
+	0%,100% {opacity: 1;}
+	50% {opacity: 0;}
+}
+@-moz-keyframes rotate { 
+	0%,100% {opacity: 1;}
+	50%{opacity: 0;}
+}
+
+#locationInfoDiv {
+	position: absolute;
+	z-index: 100;
+	display: none;
+	background-color: rgba(248, 182, 36, .66) !important;
+	color: rgb(8, 27, 44) !important;
+	font-weight: bold;
+	text-shadow: none !important;
+	width: 100%;
+	height: 13% !important;
+	bottom: -13%;
+	overflow: hidden !important;
+	text-shadow: none !important;
+}
+
+#LocationInfoContainer {
+	height: 100% !important;
+	float: left;
+	padding-left: 7px;
+	padding-top: 7px;
+	padding-right: 65px;
+	display: inline;
+}
+
+#locationInf {
+	position: absolute !important;
+	left: 0;
+	height: 100% !important;
+	min-height: 33px !important;
+	display: block !important;
+	text-align: left !important;
+	top: -1 !important;
+	left: 0 !important;
+	right: 0px !important;
+}
+
+#locationInf a {
+	background-color: transparent !important;
+	text-shadow: none !important;
+	color: rgb(8, 27, 44) !important;
+	max-height: 100% !important;
+	padding-top: 0px !important;
+	padding-left: .22em !important;
+	display: block !important;
+	position: relative !important;
+	margin-top: 0 !important;
+	white-space: pre;
+	padding-left: .22em !important;
+}
+
+#locationInf a.ui-btn {
+	border-color: rgb(248, 182, 36) !important;
+	border-right: 0em !important;
+	border-left: 0em !important;
+	border-radius: 0em !important;
+}
+
+#locationInf a img {
+	margin: 0 auto !important;
+	width: 51px;
+	height: 51px;
+	padding: 3px;
+	left: 7px !important;
+	float: left;
+	background-color: rgba(8, 27, 44, 1) !important;
+}
+
+#locationInf a h2 {
+	background-color: rgb(8, 27, 44) !important;
+	border-color: rgb(248, 182, 36) !important;
+	color: rgb(248, 182, 36) !important;
+	margin: 0 !important;
+	padding: 3px 0px 3px 0px;
+	margin-left: 55px !important;
+	display: block;
+	font-size: 11pt;
+	top: -1;
+	white-space: pre-wrap;
+	line-height: 1;
+}
+
+#locationInf a p {
+	background-color: transparent !important;
+	border-color: rgb(248, 182, 36) !important;
+	color: rgba(248, 182, 36, .66) !important;
+	margin: 0 !important;
+	display: none;
+	font-weight: normal;
+	font-size: 10pt;
+	padding: .22em;
+	padding-top: 3px;
+	max-height: 100%;
+	white-space: pre-wrap;
+	/* 	line-height: 1; */
+	overflow: auto;
+	bottom: 0.3em;
+}
+
+.heading {
+	font-size: larger;
+	font-weight: bold;
+	padding-left: 5;
+}

@@ -1,0 +1,573 @@
+@CHARSET "ISO-8859-1";
+.meter { 
+	width:100% !important;
+	height:30% !important;
+	position: relative;
+	background: #383c40;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	padding: 10px;
+	box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+}
+.meter > span {
+  display: block;
+  height: 100%;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+/*   this changes the background colour of the bar */
+  background-color: rgb(248, 182, 36);
+  
+  background-image: linear-gradient(
+    center bottom,
+    rgb(43,194,83) 37%,
+    rgb(84,240,84) 69%
+  );
+  box-shadow: 
+    inset 0 2px 9px  rgba(255,255,255,0.3),
+    inset 0 -2px 6px rgba(0,0,0,0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.meter > span:after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background-image: linear-gradient(
+    -45deg, 
+    rgba(255, 255, 255, .2) 25%, 
+    transparent 25%, 
+    transparent 50%, 
+    rgba(255, 255, 255, .2) 50%, 
+    rgba(255, 255, 255, .2) 75%, 
+    transparent 75%, 
+    transparent
+  );
+  z-index: 1;
+  background-size: 50px 50px;
+  animation: move 2s linear infinite;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  overflow: hidden;
+}
+.meter > span:after, .animate > span > span {}
+.animate > span:after {
+  display: none;
+}
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
+}.meter > span:after, .animate > span > span {
+  animation: move 2s linear infinite;
+}@keyframes expandWidth {
+   0% { width: 0; }
+   100% { width: auto; }
+}
+}
+
+
+.showLabelMouseOverTrue{
+	cursor: pointer;
+}
+#locationInfo {
+	background-color: transparent !important;
+	text-shadow: none !important;
+	color: rgb(248, 182, 36) !important;
+	display: inline !important;
+	padding-left:3px;
+	padding-right:7px;
+	width: 100%;
+	display: inline;
+}
+
+#locationDescriptionLabel {
+	padding: 2px 5px 2px 2px !important;
+	color: rgba(8, 27, 44, 1) !important;
+	background-color: rgb(248, 182, 36) !important;
+	text-shadow: none !important;
+	margin: 0 !important;
+	width: 100%;
+	font-weight: bold;
+	display: inline;
+}
+
+.ui-li-divider {
+	background-color: #383c40 !important;
+}
+
+#locationEditMenuTitle {
+	color: rgb(248, 182, 36) !important;
+	background-color: #383c40 !important;
+	text-shadow: none !important;
+}
+
+#actionBarLabel {
+	display: none;
+	position: absolute;
+	z-index: 320;
+	color: rgb(248, 182, 36);
+	background-color: rgba(8, 27, 44, 1) !important;
+	height: 20px;
+	text-shadow: none !important;
+	font-size: 10pt;
+	line-height: .3 em;
+	padding: .2em .2em .2em .2em;
+	border: solid;
+	border-width: 1;
+	border-color: rgb(248, 182, 36);
+}
+
+.labelStyleClass {
+	display: none;
+	position: absolute;
+	z-index: 1200;
+	color: rgb(248, 182, 36);
+	font-size: 10pt;
+	background-color: rgba(8, 27, 44, 1) !important;
+	height: 20px;
+	text-shadow: none !important;
+	font-size: 14pt;
+	line-height: .5 em;
+	font-weight: bold;
+	padding: .4em .4em .4em .4em;
+	border: solid;
+	border-width: 2;
+	border-color: rgb(248, 182, 36);
+}
+
+.labels {
+	/* 	font-size: 32pt !important; */
+	/* 	background-color: rgba(8, 27, 44, 1) !important; */
+	/* 	color: rgb(248, 182, 36) !important; */
+	color: red;
+	background-color: white;
+	font-family: "Lucida Grande", "Arial", sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	text-align: center;
+	width: 40px;
+	border: 2px solid black;
+	white-space: nowrap;
+}
+
+#map_canvas,#mapView {
+	width: 100%;
+	display: block;
+	height: 100%;
+	overflow: hidden;
+	border-top: solid 3px;
+	border-radius: 7px;
+	border-color: rgb(248, 182, 36) !important;
+	top: -3px;
+}
+
+#loadingOverlay {
+	display: none;
+	background-color: rgba(8, 27, 44, .77) !important;;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	position: absolute;
+	z-index: 666;
+}
+
+.markerLoading {
+	position: absolute;
+	top: 49%;
+	width: 44px;
+	height: 44px;
+	display: block;
+	margin-left: 50%;
+	margin-top: 7px;
+	background-color: rgb(248, 182, 36);
+	border-radius: 100%;
+	z-index: 101;
+	-webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+	animation: sk-scaleout 1.0s infinite ease-in-out;
+}
+
+#popupConfirmation_header {
+	background-color: transparent;
+}
+#popupConfirmation_content {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+#confirmationMessage {
+	color: #fff;
+	text-align: center;
+}
+#confirmationWarning {
+	color: #fff;
+	text-align: center;
+}
+#popupConfirmation_confirmBTN {
+	float: right;
+}
+#popupConfirmation_cancelBTN {
+	float: left;
+}
+
+@
+-webkit-keyframes sk-scaleout { 0% {
+	-webkit-transform: scale(0)
+}
+
+100%
+{
+-webkit-transform
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:scale
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+(1
+.0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+);
+opacity
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0;
+}
+}
+@
+keyframes sk-scaleout { 0% {
+	-webkit-transform: scale(0);
+	transform: scale(0);
+}
+
+100%
+{
+-webkit-transform
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+scale
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+(1
+.0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+);
+transform
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+scale
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(1
+.0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+);
+opacity
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0;
+}
+}
+#loadingContent {
+	position: absolute;
+	color: rgb(248, 182, 36);
+	font-size: 10pt;
+	top: 55%;
+	left: 50%;
+}
+
+#iconDiv {
+	width: auto;
+	height: auto;
+}
+
+.ui-slider-track {
+	border-color: rgba(248, 182, 36, 1) !important;
+	background-color: rgba(8, 27, 44, 1) !important;
+}
+
+.ui-slider-handle {
+	border: solid 2px !important;
+	background-color: rgba(248, 182, 36, 1) !important;
+	border-color: rgba(8, 27, 44, 1) !important;
+}
+
+.editInfo {
+	min-height: 0 !important;
+	padding-left: 2.22em !important;
+}
+
+.editInfo>img {
+	width: 27px;
+	height: 27px;
+	padding: 7px 7px 3px 3px !important;
+}

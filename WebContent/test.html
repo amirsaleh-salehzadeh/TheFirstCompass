@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Polyline with label on click</title>
+
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<style type="text/css">
+html {
+	height: 100%
+}
+
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0
+}
+
+#map_canvas {
+	height: 100%
+}
+</style>
+<script type="text/javascript"
+	src="http://maps.googleapis.com/maps/api/js?key=AIzaSyABLdskfv64ZZa0mpjVcTMsEAXNblL9dyE&libraries=drawing"></script>
+<script>
+	// Define the overlay, derived from google.maps.OverlayView
+	function Label(opt_options) {
+		// Initialization
+		this.setValues(opt_options);
+
+		// Label specific
+		var span = this.span_ = document.createElement('span');
+		span.style.cssText = 'position: relative; left: -50%; top: -8px; '
+				+ 'white-space: nowrap; border: 1px solid blue; '
+				+ 'padding: 2px; background-color: white';
+
+		var div = this.div_ = document.createElement('div');
+		div.appendChild(span);
+		div.style.cssText = 'position: absolute; display: none';
+	}
+	Label.prototype = new google.maps.OverlayView();
+
+	// Implement onAdd
+	Label.prototype.onAdd = function() {
+		var pane = this.getPanes().floatPane;
+		pane.appendChild(this.div_);
+
+		// Ensures the label is redrawn if the text or position is changed.
+		var me = this;
+		this.listeners_ = [
+				google.maps.event.addListener(this, 'position_changed',
+						function() {
+							me.draw();
+						}),
+				google.maps.event.addListener(this, 'text_changed', function() {
+					me.draw();
+				}) ];
+	};
+
+	// Implement onRemove
+	Label.prototype.onRemove = function() {
+		var i, I;
+		this.div_.parentNode.removeChild(this.div_);
+
+		// Label is removed from the map, stop updating its position/text.
+		for (i = 0, I = this.listeners_.length; i < I; ++i) {
+			google.maps.event.removeListener(this.listeners_[i]);
+		}
+	};
+
+	// Implement draw
+	Label.prototype.draw = function() {
+		var projection = this.getProjection();
+		var position = projection.fromLatLngToDivPixel(this.get('position'));
+
+		var div = this.div_;
+		div.style.left = position.x + 'px';
+		div.style.top = position.y + 'px';
+		div.style.display = 'block';
+
+		this.span_.innerHTML = this.get('text').toString();
+	};
+
+	function initialize() {
+		var stavanger = new google.maps.LatLng(58.983991, 5.734863);
+		var amsterdam = new google.maps.LatLng(52.395715, 4.888916);
+		var london = new google.maps.LatLng(51.508742, -0.120850);
+
+		var map = new google.maps.Map(document.getElementById("map_canvas"), {
+			zoom : 5,
+			center : new google.maps.LatLng(52.395715, 4.888916),
+			mapTypeId : google.maps.MapTypeId.ROADMAP
+		});
+
+		var myTrip = [ stavanger, amsterdam, london ];
+
+		var flightPath = new google.maps.Polyline({
+			path : myTrip,
+			strokeColor : "#0000FF",
+			strokeOpacity : 0.8,
+			strokeWeight : 2,
+			map : map
+		});
+
+		// create an invisible marker
+		labelMarker = new google.maps.Marker({
+			position : stavanger,
+			map : map,
+			visible : false
+		});
+
+		var myLabel = new Label();
+
+		// lets add an event listener, if you click the line, i'll tell you the coordinates you clicked
+		flightPath.addListener('click', function(e) {
+			labelMarker.setPosition(e.latLng)
+			myLabel.bindTo('position', labelMarker, 'position');
+			myLabel.set('text', e.latLng.toString());
+			myLabel.setMap(map);
+		});
+	}
+
+	google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+</head>
+<body>
+	<div id="map_canvas"></div>
+</body>
+</html>

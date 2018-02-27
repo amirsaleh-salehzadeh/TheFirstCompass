@@ -1,0 +1,158 @@
+button {
+	cursor: pointer;
+}
+
+#menuItems {
+	padding: 7px 4px 7px 4px;
+	display: block;
+	position: absolute;
+	z-index: 100 !important;
+	left: .33em !important;
+	padding-top: 6.2em;
+	/* 	bottom: 11; */
+}
+
+.zoomBTN {
+	cursor: pointer;
+	min-width: 46px;
+	min-height: 46px;
+	margin-bottom: 3px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+	border-color: rgb(248, 182, 36) !important;
+	padding: 10px 10px;
+	display: inline-block;
+	background-color: rgba(8, 27, 44, .77);
+	padding: 10px 10px 10px 10px;
+}
+
+#menuLeftSideBTN {
+	background-image: url("../../images/icons/menu.png") !important;
+	background-repeat: no-repeat;
+	background-size: 38px 38px;
+	background-position: center;
+	top: .55em !important;
+	left: 7px !important;
+	position: absolute;
+}
+
+#searchLeftSideBTN {
+	background-image: url("../../images/icons/search.png") !important;
+	background-repeat: no-repeat;
+	background-size: 36px 36px;
+	background-position: center;
+	top: .55em !important;
+	right: 7px !important;
+	float: right;
+	position: absolute;
+}
+
+#zoomin {
+	background-image: url("../../images/icons/zoomin.png") !important;
+	background-repeat: no-repeat;
+	background-size: 32px 32px;
+	background-position: center;
+}
+
+#zoomout {
+	background-image: url("../../images/icons/zoomout.png") !important;
+	background-repeat: no-repeat;
+	background-size: 32px 32px;
+	background-position: center;
+}
+
+#satelliteView {
+	background-image: url("../../images/icons/satellite.png") !important;
+	background-repeat: no-repeat;
+	background-size: 32px 32px;
+	background-position: center;
+}
+
+#mapViewIcon {
+	background-image: url("../../images/icons/mapsview.png") !important;
+	background-repeat: no-repeat;
+	background-size: 32px 32px;
+	background-position: center;
+}
+
+#dashboardPanel {
+	display: none;
+	position: fixed;
+	bottom: 0em;
+	left: 0em;
+	height: 13%;
+	width: 100%;
+	background: transparent !important;
+}
+
+.navbtn {
+	margin: auto;
+	color: rgb(248, 182, 36) !important;
+	font-size: 9px;
+	text-decoration: none;
+	text-shadow: none !important;
+	background-position: top;
+	text-transform: uppercase;
+	background-color: rgba(8, 27, 44, .77) !important;
+	padding-top: 31px;
+	z-index: 102;
+	padding-left: 0 !important;
+}
+
+#mylocation {
+	background-image: url("../../images/icons/target.png") !important;
+	background-repeat: no-repeat;
+	background-size: 32px 32px;
+	background-position: center;
+}
+
+#mapViewSelect {
+	background-image: url("../../images/icons/maps.png") !important;
+	background-repeat: no-repeat;
+	background-size: 32px 32px;
+	background-position: center;
+}
+
+#dualModeSelect {
+	background-image: url("../../images/icons/QRCodeIcon.png") !important;
+	background-repeat: no-repeat;
+	background-size: 32px 32px;
+	background-position: center;
+}
+
+#btnToggleFullscreen {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	cursor: pointer;
+	width: 48px;
+	height: 48px;
+	background-image: url("../../images/icons/maximise.png") !important;
+	background-repeat: no-repeat;
+	background-color: transparent;
+	box-shadow: none;
+}
+
+#btnToggleFullscreen.off {
+	background-image: url("../../images/icons/minimise.png") !important;
+	/* 48px x 48px */
+}
+
+#viewFullScreen {
+	padding: 7px 4px 7px 4px;
+}
+
+#btnEmergency {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	cursor: pointer;
+	width: 48px;
+	height: 48px;
+	background-image: url("../../images/icons/emergency-icon.png")
+		!important;
+	background-repeat: no-repeat;
+	background-color: transparent;
+	box-shadow: none;
+}
